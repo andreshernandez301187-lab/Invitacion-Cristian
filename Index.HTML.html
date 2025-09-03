@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Estás Invitado! - Fiesta de 15 Años</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Dark background fallback */
+            color: #f0f0f0; /* Light text for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative; /* Necesario para posicionar el pseudo-elemento */
+            z-index: 1; /* Asegura que el contenido del body esté por encima del fondo */
+        }
+        /* Pseudo-elemento para la imagen de fondo con filtro */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABVBoNoT7w9QWAzo9aiNmsP6QkJ3a_XcqYcrqa2qeocpgq77VkOSly7NEggsC_J2zw4NoVk32SsEsiSDOlIgVXFl-rIbNbrbHhIBN.jpg?r=611); /* Tu imagen de fondo */
+            background-size: cover; /* Cubre todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-attachment: fixed; /* Fija la imagen de fondo al desplazarse */
+            filter: brightness(2.0); /* Ajusta este valor para más o menos brillo (1.0 es normal, >1.0 es más brillante) */
+            z-index: -1; /* Coloca el fondo detrás del contenido del body */
+        }
+        .invite-card {
+            background-color: rgba(26, 26, 26, 0.8); /* Fondo de la tarjeta con un poco más de transparencia */
+            border: 3px solid #b70909; /* Red border like the Stranger Things logo */
+            box-shadow: 0 0 20px rgba(183, 9, 9, 0.7); /* Red glow effect */
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 10; /* Ensure the card is above the background image */
+        }
+        .title {
+            font-size: 3.5rem; /* Larger title */
+            font-weight: 700;
+            color: #e50914; /* Netflix red */
+            text-shadow: 0 0 10px #e50914, 0 0 20px #e50914, 0 0 30px #e50914; /* Glow effect */
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .subtitle {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+        .details-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #cccccc;
+        }
+        .theme-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #b70909; /* Darker red for theme */
+            margin-top: 25px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 5px #b70909;
+        }
+        .rsvp-button {
+            background-color: #e50914; /* Netflix red */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.5);
+            cursor: pointer;
+            border: none;
+            margin-top: 30px;
+        }
+        .rsvp-button:hover {
+            background-color: #ff2a37; /* Lighter red on hover */
+            transform: translateY(-3px);
+        }
+        .rsvp-message {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #00ff00; /* Green for success */
+            font-weight: 600;
+            display: none; /* Hidden by default */
+        }
+        .footer-text {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #888888;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .details-text {
+                font-size: 1rem;
+            }
+            .theme-text {
+                font-size: 1.1rem;
+            }
+            .rsvp-button {
+                font-size: 1.2rem;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invite-card">
+        <h1 class="title">¡Estás Invitado!</h1>
+        <p class="subtitle">A la fiesta de XV años de</p>
+        <p class="text-4xl font-bold text-white mb-6">
+            <span style="text-shadow: 0 0 8px #e50914, 0 0 15px #e50914;">[Cristian Abdiel Hernandez Barrios]</span>
+        </p>
+
+        <p class="details-text">
+            <span class="font-bold text-red-500">Fecha:</span> Sábado, 13 de Septiembre de 2025
+        </p>
+        <p class="details-text">
+            <span class="font-bold text-red-500">Hora:</span> 5:00 PM
+        </p>
+        <p class="details-text">
+            <span class="font-bold text-red-500">Lugar:</span> Salon de Eventos Giselle, Heroes de Chicago
+        </p>
+
+        <p class="theme-text">
+            No olvides tu traje de baño <br>
+            <span class="text-red-600 text-2xl font-extrabold" style="text-shadow: 0 0 10px #e50914, 0 0 20px #e50914;">STRANGER THINGS</span>
+        </p>
+
+        <p class="details-text">
+            ¡No te pierdas esta aventura en el Upside Down!
+        </p>
+
+        <button class="rsvp-button" onclick="confirmRSVP()">
+            Confirmar Asistencia
+        </button>
+
+        <p id="rsvpMessage" class="rsvp-message">
+            ¡Gracias por confirmar! Te esperamos.
+        </p>
+
+        <p class="footer-text">
+            Se ruega confirmar antes del 13 de Septiembre.
+        </p>
+    </div>
+
+    <script>
+        function confirmRSVP() {
+            const rsvpButton = document.querySelector('.rsvp-button');
+            const rsvpMessage = document.getElementById('rsvpMessage');
+
+            // Simulate sending RSVP (in a real app, this would send data to a server)
+            rsvpButton.disabled = true; // Disable button after click
+            rsvpButton.textContent = '¡Asistencia Confirmada!';
+            rsvpButton.style.backgroundColor = '#008000'; // Change color to green
+            rsvpButton.style.boxShadow = '0 5px 15px rgba(0, 128, 0, 0.5)';
+
+            rsvpMessage.style.display = 'block'; // Show the confirmation message
+
+            // You could also redirect to a Google Form or another page here
+            // window.location.href = "YOUR_GOOGLE_FORM_LINK_HERE";
+        }
+    </script>
+</body>
+</html>
